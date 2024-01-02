@@ -200,3 +200,25 @@
 	\end{itemize}
 	\vspace{-5pt}
 }
+
+\newcommand{\outputReinforcementPurchaseTitle}[2]{
+	\vspace{6pt}
+	\fontsize{12pt}{8pt}\selectfont
+	\textbf{#1}
+	\hfill
+	{#2} RP
+	\fontsize{10pt}{10pt}\selectfont
+	\par
+}
+
+\newcommand{\outputUsingSpawnTableBoilerplate}{
+	\section*{Using the Horde Spawn Table}
+	\begin{itemize}[leftmargin=*]
+		\item Unmodified 2 is always "No Spawn"
+		\item Rounds 3 and 4 +1 to Horde Spawn rolls.
+		\item Round 5 +2 to Horde Spawn rolls.
+		\item You may instead choose to spawn 2 units from the tier below the rolled tier instead.  This can help find valid units to spawn and help give a horde feel in late game.
+		\item If there are units missing in this table you wish to play with, the general layout is: 3-4 = 75~ points or less, 5-6 80-170 points, 7-9 175-295 points, 10+ 300+ points.
+		\item The term "(full)" is any valid unit on the spawning table for that transport to carry.  Decide what to fill it with at your discretion.  10 Terminators with a Leader in a Land Raider is the same entry as 5 Intercessors without a leader.
+	\end{itemize}
+}
