@@ -11,6 +11,9 @@
 \usepackage{etoolbox} 
 \usepackage{array}
 \usepackage{enumitem}
+\usepackage{hyperref} % required by kramdown
+\usepackage{listings} % required by kramdown
+
 \setlist{nolistsep}
 
 \setlength{\parindent}{0pt}
