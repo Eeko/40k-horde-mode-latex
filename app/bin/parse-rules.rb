@@ -7,6 +7,7 @@
 # e.g. 
 # $ ruby parse-rules.rb --version v0.83 --output ../../test1.tex --rule-file ../../40k-horde-mode-markdown/rules/core-rules.md --template ../templates/core-rules-book.tex.erb
 # $ ruby parse-rules.rb --version v0.83 --output ../../test2.tex --rule-file ../../40k-horde-mode-markdown/rules/reinforcement-points-purchase-table.md --template ../templates/reinforcement-points-purchase-table.tex.erb
+# $ ruby parse-rules.rb --version v0.83 --output ../../test3.tex --rule-file ../../40k-horde-mode-markdown/spawn-tables/space-marines.md --template ../templates/spawn-table.tex.erb
 require_relative '../lib/tools'
 require 'optparse'
 

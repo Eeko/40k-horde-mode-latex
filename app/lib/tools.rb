@@ -28,6 +28,20 @@ class String
     section_regex = /^\\section\*\{(?<reinforcement>.*),\s*(?<price>\d+)\s*RP\}/
     self.replace(self.gsub(section_regex, '\outputReinforcementPurchaseTitle{\k<reinforcement>}{\k<price>}'))
   end
+
+  #helper to add the two-column boilerplate used in the spawn tables
+  def add_spawn_table_boilerplate!
+    section_regex = /\n\\section\*?\{.*label\{roll-results\}/
+    self.replace(self.gsub(section_regex, "\\outputUsingSpawnTableBoilerplate\n" + '\0' + "\n\n\\begin{multicols}{2}"))
+  end
+
+  #helper to use the right kind of itemization in spawn tables
+  def fix_spawn_table_items!
+    itemize_regex = /\\begin\{itemize\}/
+    item_regex = /\\item\{\}/
+    self.replace(self.gsub(itemize_regex, '\\begin{itemize}[leftmargin=*]'))
+    self.replace(self.gsub(item_regex, '\\item[]'))
+  end
 end
 
 #function to read the metadata from the rule file and decide which generator to use
@@ -38,6 +52,8 @@ def markdown_to_tex(rules_md_path, template_erb_path, version)
     output = generate_rules_tex(markdown_content, template_erb_path, version)
   elsif metadata["type"] == "reinforcement-purchase-table"
     output = generate_reinforcement_table_tex(markdown_content, template_erb_path, version)
+  elsif metadata["type"] == "spawn-table"
+    output = generate_spawn_table_tex(markdown_content, metadata["faction"], template_erb_path, version)
   else
     puts metadata
     output = "No good parser found for content type #{metadata["type"]}!"
@@ -66,6 +82,20 @@ def generate_reinforcement_table_tex(reinforcement_table, template_erb_path, ver
     :auto_ids => false
   }).to_latex
   kramdown_output.customize_reinforcement_sections!
+  template = ERB.new(erb_template)
+  return template.result(binding)
+end
+
+# generator for spawn table content
+def generate_spawn_table_tex(spawn_table, faction, template_erb_path, version)
+  erb_template = File.read(template_erb_path)
+  spawn_table.strip_title! # remove the title line as it's defined already in the .erb template
+  kramdown_output = Kramdown::Document.new(spawn_table, {
+    :latex_headers => "title,section,subsection,subsubsection,paragraph,subparagraph",
+    :auto_ids => false
+  }).to_latex
+  kramdown_output.add_spawn_table_boilerplate!
+  kramdown_output.fix_spawn_table_items!
   template = ERB.new(erb_template)
   return template.result(binding)
 end

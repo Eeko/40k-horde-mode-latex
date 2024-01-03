@@ -1,17 +1,23 @@
 \documentclass{HordeModeTarot}
+\usepackage{flushend}
+\usepackage{multicol}
+%\usepackage{enumitem}
 
 \setTarotCardGeometry
 %\printRulesTrimmingLines
 
-\title{Reinforcement Points Purchase Table}
+\title{<%= faction %> Spawn Table}
 \author{Warhammer 40k Horde Mode}
 \date{\today \\<%= version %>}
 
 \setlength{\parskip}{3pt}
+%\setlist{leftmargin=*,itemsep=1pt,topsep=1pt}
 \fontsize{10pt}{10pt}\selectfont
 \begin{document}
 \maketitle
 
 <%= kramdown_output %>
+
+\end{multicols}
 
 \end{document}
