@@ -1,0 +1,3 @@
+[submodule "40k-horde-mode-markdown"]
+	path = 40k-horde-mode-markdown
+	url = https://github.com/Eeko/40k-horde-mode-markdown.git
