@@ -8,6 +8,7 @@
 # $ ruby parse-rules.rb --version v0.83 --output ../../test1.tex --rule-file ../../40k-horde-mode-markdown/rules/core-rules.md --template ../templates/core-rules-book.tex.erb
 # $ ruby parse-rules.rb --version v0.83 --output ../../test2.tex --rule-file ../../40k-horde-mode-markdown/rules/reinforcement-points-purchase-table.md --template ../templates/reinforcement-points-purchase-table.tex.erb
 # $ ruby parse-rules.rb --version v0.83 --output ../../test3.tex --rule-file ../../40k-horde-mode-markdown/spawn-tables/space-marines.md --template ../templates/spawn-table.tex.erb
+# $ ruby parse-rules.rb --version v0.83 --output ../../test4.tex --rule-file ../../40k-horde-mode-markdown/cards/secret/saboteur.md --template ../templates/secret-objective-card.tex.erb
 require_relative '../lib/tools'
 require 'optparse'
 
@@ -27,6 +28,9 @@ OptionParser.new do |opts|
   opts.on("-o", "--output PATH", "PATH to where the output should be written to. If empty, STDOUT will be ued") do |o|
     options[:output] = o
   end
+  opts.on "-c", "--croplines", "render crop lines to the output." do |c|
+    options[:croplines] = c
+  end
 end.parse!
 
 #set defaults if empty
@@ -34,7 +38,7 @@ if not options[:version]
   options[:version] = ""
 end
 
-tex_output = markdown_to_tex(options[:rules], options[:template], options[:version])
+tex_output = markdown_to_tex(options)
 
 if options[:output]
   File.open(options[:output], 'w') { |f| f.write(tex_output) }

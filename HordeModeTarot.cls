@@ -91,7 +91,7 @@
 \newcommand{\outputCardTitleOneLine}[1]{
 	\hrule
 	\vspace{16pt}
-	\fontsize{25}{22}
+	\fontsize{23}{22}
 	\selectfont
 	\MakeUppercase{#1}\\
 	%\par

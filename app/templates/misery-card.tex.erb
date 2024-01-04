@@ -1,0 +1,20 @@
+\documentclass{HordeModeTarot} % note that the TeX class file needs to be either in the same directory as this .tex file or sourced to the TeX environment
+\setTarotCardGeometry
+
+<%= if croplines then "\\printCardTrimmingLines" end %>
+
+\begin{document}
+
+\outputCardType{Misery Event}
+<%= if cardtitle.class == String then "\\outputCardTitleOneLine{#{cardtitle}}" else "\\outputCardTitleTwoLine{#{cardtitle[0]}}{#{cardtitle[1]}}" end %>
+
+<%= if effect.to_kramdown.size < 150 then "\\outputCardEffectBig" else "\\outputCardEffectSmall" end %>{
+<%= effect.to_latex %>
+}
+
+<%= if flavortext then "\\outputFlavorText{#{flavortext}}" end %>
+\outputEffectEnd
+
+\outputVersionBoilerplate{<%= version %>}
+
+\end{document}
