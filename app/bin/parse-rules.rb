@@ -11,6 +11,7 @@
 # $ ruby parse-rules.rb --version v0.83 --output ../../test4.tex --rule-file ../../40k-horde-mode-markdown/cards/secret/saboteur.md --template ../templates/secret-objective-card.tex.erb
 require_relative '../lib/tools'
 require 'optparse'
+require 'pathname'
 
 options = {}
 OptionParser.new do |opts|
@@ -38,10 +39,35 @@ if not options[:version]
   options[:version] = ""
 end
 
-tex_output = markdown_to_tex(options)
-
-if options[:output]
-  File.open(options[:output], 'w') { |f| f.write(tex_output) }
-else
-  puts tex_output
+if not (options[:template] and options[:rules])
+  abort("-t and -r switches are required. See ./parse-rules.rb -h for help.")
 end
+
+# check if rulefile is a file
+if File.file?(options[:rules])
+  tex_output = markdown_to_tex(options)
+  if options[:output]
+    File.open(options[:output], 'w') { |f| f.write(tex_output) }
+  else
+    puts tex_output
+  end
+elsif File.directory?(options[:rules]) # if the rulefile is a path
+  if options[:output] == nil
+    abort("The -o switch should point to a directory if -r targets a directory")
+  elsif not File.directory?(options[:output]) 
+    abort("The -o switch should also point to a directory if -r is a directory")
+  end
+  # process whole directory of .md files with one shot
+  Dir.glob("#{options[:rules]}/*.md").each do |f|
+    basename = File.basename(f, ".*")
+    single_file_options = options.dup
+    single_file_options[:rules] = f
+    tex_output = markdown_to_tex(single_file_options)
+    File.open("#{options[:output]}/#{basename}.tex", 'w') { |f| f.write(tex_output) }
+  end
+else
+  abort("The path given with -r switch should point to a single file or directory. See ./parse-rules.rb -h for help.")
+end
+
+
+
