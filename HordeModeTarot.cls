@@ -224,4 +224,5 @@
 		\item If there are units missing in this table you wish to play with, the general layout is: 3-4 = 75~ points or less, 5-6 80-170 points, 7-9 175-295 points, 10+ 300+ points.
 		\item The term "(full)" is any valid unit on the spawning table for that transport to carry.  Decide what to fill it with at your discretion.  10 Terminators with a Leader in a Land Raider is the same entry as 5 Intercessors without a leader.
 	\end{itemize}
+	\newpage
 }

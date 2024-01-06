@@ -31,7 +31,7 @@ class String
 
   #helper to add the two-column boilerplate used in the spawn tables
   def add_spawn_table_boilerplate!
-    section_regex = /\n\\section\*?\{.*label\{roll-results\}/
+    section_regex = /\n?\\section\*?\{.*label\{roll-results\}/
     self.replace(self.gsub(section_regex, "\\outputUsingSpawnTableBoilerplate\n" + '\0' + "\n\n\\begin{multicols}{2}"))
   end
 
@@ -156,6 +156,7 @@ def generate_spawn_table_tex(spawn_table, faction, options)
     :latex_headers => "title,section,subsection,subsubsection,paragraph,subparagraph",
     :auto_ids => false
   }).to_latex
+  #binding.pry
   kramdown_output.add_spawn_table_boilerplate!
   kramdown_output.fix_spawn_table_items!
   template = ERB.new(erb_template)

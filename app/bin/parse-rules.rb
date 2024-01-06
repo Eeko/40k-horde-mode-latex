@@ -26,7 +26,7 @@ OptionParser.new do |opts|
   opts.on("-t", "--template PATH", "PATH to .erb file containing the ERB-template") do |t|
     options[:template] = t
   end
-  opts.on("-o", "--output PATH", "PATH to where the output should be written to. If empty, STDOUT will be ued") do |o|
+  opts.on("-o", "--output PATH", "PATH to where the output should be written to. If empty, STDOUT will be used") do |o|
     options[:output] = o
   end
   opts.on "-c", "--croplines", "render crop lines to the output." do |c|
