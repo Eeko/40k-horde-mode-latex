@@ -54,7 +54,7 @@ rm $GITROOT/build/pdf/printable/cards/secret/pdf-collection-printable.tex #clean
 # make the spawn-tables
 for file in $GITROOT/build/pdf/onscreen/spawn-tables/*.pdf
 do
-  $GITROOT/app/bin/generate-multipage-printables.rb -t $GITROOT/app/templates/two-page-pdf-leaflet.tex.erb -r "$file"
+  $GITROOT/app/bin/generate-multipage-printables.rb -t $GITROOT/app/templates/four-page-pdf-leaflet.tex.erb -r "$file"
 done
 
 for file in $GITROOT/build/pdf/onscreen/spawn-tables/*.tex
@@ -63,8 +63,19 @@ do
 done
 mv $GITROOT/build/pdf/onscreen/spawn-tables/*-printable.pdf $GITROOT/build/pdf/printable/spawn-tables/
 
- 
+# make the reinforcement-points table
+$GITROOT/app/bin/generate-multipage-printables.rb -t $GITROOT/app/templates/four-page-pdf-leaflet.tex.erb -r $GITROOT/build/pdf/onscreen/rules/reinforcement-points-purchase-table.pdf
+pdflatex --output-directory $GITROOT/build/pdf/onscreen/rules $GITROOT/build/pdf/onscreen/rules/reinforcement-points-purchase-table-printable.tex
+mv $GITROOT/build/pdf/onscreen/rules/reinforcement-points-purchase-table-printable.pdf $GITROOT/build/pdf/printable/rules/
+
+# make the rulebook booklet
+$GITROOT/app/bin/generate-multipage-printables.rb -t $GITROOT/app/templates/two-page-pdf-booklet.tex.erb -r $GITROOT/build/pdf/onscreen/rules/core-rules.pdf
+pdflatex --output-directory $GITROOT/build/pdf/onscreen/rules $GITROOT/build/pdf/onscreen/rules/core-rules-printable.tex
+mv $GITROOT/build/pdf/onscreen/rules/core-rules-printable.pdf $GITROOT/build/pdf/printable/rules/
+
+
 # clean up the working files
+find $GITROOT/build/pdf/ -name '*.tex' -execdir rm {} \;
 find $GITROOT/build/ -name '*.aux' -execdir rm {} \;
 find $GITROOT/build/ -name '*.log' -execdir rm {} \;
 find $GITROOT/build/ -name '*.out' -execdir rm {} \;
