@@ -60,7 +60,7 @@
 
 \newcommand{\setTarotCardGeometry}{
 	\geometry{
-		paperwidth=68mm, paperheight=116mm, %Tarot
+		paperwidth=66mm, paperheight=114mm, %Tarot
 	}
 }
 
@@ -91,7 +91,7 @@
 \newcommand{\outputCardTitleOneLine}[1]{
 	\hrule
 	\vspace{16pt}
-	\fontsize{23}{22}
+	\fontsize{21}{21}
 	\selectfont
 	\MakeUppercase{#1}\\
 	%\par
@@ -127,7 +127,7 @@
 }
 
 \newcommand{\outputCardEffectSmall}[1]{
-	\vspace{10pt}
+	\vspace{4pt}
 	\setlength{\parskip}{8pt}
 	\fontsize{11pt}{11pt}
 	\selectfont
@@ -224,5 +224,5 @@
 		\item If there are units missing in this table you wish to play with, the general layout is: 3-4 = 75~ points or less, 5-6 80-170 points, 7-9 175-295 points, 10+ 300+ points.
 		\item The term "(full)" is any valid unit on the spawning table for that transport to carry.  Decide what to fill it with at your discretion.  10 Terminators with a Leader in a Land Raider is the same entry as 5 Intercessors without a leader.
 	\end{itemize}
-	\newpage
+	%\newpage
 }
