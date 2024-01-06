@@ -1,0 +1,16 @@
+\documentclass{HordeModeTarot}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{pdfpages}
+
+\usepackage[
+	width=178mm, height=292mm, % 14mm margins to each side for cropmarks
+	cam, % options: cross, cam, axes, frame
+	noinfo, % Don't display default page information at the top added by this package
+	center,
+]{crop} % adding cropmarks
+
+\begin{document}
+  \includepdfmerge[pages=-,nup=2x2]{<%= file_list %>}
+\end{document}

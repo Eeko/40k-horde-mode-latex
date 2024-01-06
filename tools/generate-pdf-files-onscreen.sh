@@ -1,7 +1,7 @@
 #!/usr/env bash
 
 # generate-pdf-files-onscreen.sh
-# Run this script to generate all .pdf files from the .tex files in build/tex/onscreen directory
+# Run this script to build all .pdf files from the .tex files in build/tex/onscreen directory
 # I.e, single pages in a pdf without crop marks.
 # The output files will be stored to the build/pdf/onscreen/ path in the execution folder which will be created.
 # requires pdflatex with a bunch of built-in packages. E.g. sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra

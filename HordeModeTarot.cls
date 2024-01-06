@@ -51,7 +51,7 @@
 
 \newcommand{\printCardTrimmingLines}{
 	\usepackage[
-		width=80mm, height=130mm, % 5mm margins to each side
+		width=82mm, height=132mm, % 10mm margins to each side
 		cam, % options: cross, cam, axes, frame
 		noinfo, % Don't display default page information at the top added by this package
 		center,
@@ -60,7 +60,7 @@
 
 \newcommand{\setTarotCardGeometry}{
 	\geometry{
-		paperwidth=70mm, paperheight=120mm, %Tarot
+		paperwidth=68mm, paperheight=116mm, %Tarot
 	}
 }
 

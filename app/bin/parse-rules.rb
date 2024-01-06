@@ -20,7 +20,7 @@ OptionParser.new do |opts|
   opts.on("-v", "--version VERSION", "Set VERSION to be printed to the outputfile.") do |v|
     options[:version] = v
   end
-  opts.on("-r", "--rule-file PATH", "PATH to .md file containing the core rules") do |r|
+  opts.on("-r", "--rule-file PATH", "PATH to .md file containing the game rules") do |r|
     options[:rules] = r
   end
   opts.on("-t", "--template PATH", "PATH to .erb file containing the ERB-template") do |t|
