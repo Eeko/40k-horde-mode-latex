@@ -1,0 +1,26 @@
+\documentclass{extarticle} % note that the TeX class file needs to be either in the same directory as this .tex file or sourced to the TeX environment
+\usepackage{graphicx}
+
+\usepackage[
+	top=0mm,
+	bottom=0mm,
+	left=0mm,
+	right=0mm,
+	paperwidth=66mm, paperheight=114mm,
+	%showframe
+]{geometry}
+\usepackage[
+	width=82mm, height=132mm, % 10mm margins to each side
+	cam, % options: cross, cam, axes, frame
+	noinfo, % Don't display default page information at the top added by this package
+	center,
+]{crop}
+
+\begin{document}
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./png/misery-cardback.png}%
+
+\end{figure}
+
+\end{document}
