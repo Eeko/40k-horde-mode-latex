@@ -1,0 +1,29 @@
+\documentclass{HordeModeTarot} % note that the TeX class file needs to be either in the same directory as this .tex file or sourced to the TeX environment
+\setTarotCardGeometry
+
+\printCardTrimmingLines
+
+\begin{document}
+
+\outputCardType{Secondary Objective}
+\outputCardTitleTwoLine{Establish Orbital}{Comms}
+
+\outputCardEffectSmall{
+In your shooting phase, select a unit within 6” of the center of the battlefield that is not Battle-shocked and eligible to shoot.  Until the end of turn that unit is not eligible to shoot or declare a charge.
+
+At the end of your turn if that unit is within 6” of the center of the battlefield this mission is successful.
+
+
+}
+
+
+\outputEffectEnd
+\outputSecondaryObjectiveResults{One at a time, each player without a revealed Secret Objective immediately uses \textbf{A Change of Plans}.
+
+}{The same as \textbf{Success} but players do not choose a card, instead they get one at random.
+
+}
+
+\outputVersionBoilerplate{v0.83 Beta}
+
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass{HordeModeTarot} % note that the TeX class file needs to be either in the same directory as this .tex file or sourced to the TeX environment
+\setTarotCardGeometry
+
+\printCardTrimmingLines
+
+\begin{document}
+
+\outputCardType{Secondary Objective}
+\outputCardTitleTwoLine{Search for}{Supplies}
+
+\outputCardEffectSmall{
+In your shooting phase, select any number of units on different objective markers in No Man’s Land or the enemy deployment zone that are not Battle-shocked and eligible to shoot.  Until the end of turn those units are not eligible to shoot or declare a charge.
+
+Keep a tally, X, of how many units were selected.  If X = 0 at the end of the battle round, this mission fails.
+
+
+}
+
+
+\outputEffectEnd
+\outputSecondaryObjectiveResults{X+1RP
+
++2CP if X\textgreater{}=3.
+
+}{+2 Misery cards
+
+}
+
+\outputVersionBoilerplate{v0.83 Beta}
+
+\end{document}
