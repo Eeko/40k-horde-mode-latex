@@ -1,6 +1,8 @@
 # 40k-horde-mode-latex
 
-Tooling to generate printable game rsources for Poorhammer 40k Horde mode from markdown files. tl;dr; check the `print-me` directory.
+Tooling to generate printable game resources for Poorhammer 40k Horde mode from markdown files in the size of 120x70mm "Tarot" card deck. 
+
+tl;dr; check the `print-me` directory.
 
 ### What is Horde mode?
 
