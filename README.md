@@ -38,7 +38,7 @@ The quick-start way to get this edition to your printer would be to navigate to 
   * This contains a copy of the reinforcement shop of the game. It's intended to be folded three times to an "accordion" shape after cutting along the crop marks.
 * The misery, secondary and secret objective cards from `misery-card-collection.pdf`, `secondary-card-collection.pdf` and `secret-card-collection.pdf`. Printing a set and cutting along the crop marks will give you roughly 120x70mm size sheets.
 * You can also print the necessary spawn tables from the `spawn-tables` directory depending on what Hordes the players intend to use. These are intended to be cut and folded similarly to the reinforcement points purchase table above.
-* **Optionally** one can also print a set of backgrounds for the cards for easier identification of individual decks. Each `misery-cardback.pdf`, `secondary-cardback.pdf` and `secret-cardback.pdf` contains a page with four copies of the cardbacks along with cutmarks.
+* **Optionally** one can also print a set of backgrounds for the cards for easier identification of individual decks. `cardbacks.pdf` contains a page for each type of card with four copies of the cardbacks along with cutmarks.
  * One can print these directly on the back of the cards one printed earlier should they be using a thick enough paper and having access to a printer being able to print very precisely to the sheets. 
  * Or they can do like me and use them to construct their own "card sandwiches" - where you slip the background paper, a thin piece of cardboard (or tarot-sized playing card from another game) and the effect card into a plastic card protector easily available from your local game store.
 
