@@ -32,7 +32,7 @@ The quick-start way to get this edition to your printer would be to navigate to 
 
 * Either `core-rules-onscreen-version-with-no-print-aids.pdf` or `core-rules-two-sided-booklet-broadside-print.pdf`
   * This contains the core ruleset of Horde Mode. The "onscreen" -version is just the rules printed to a paginated .pdf without any cut-aids sized to 120x70mm size. If you have access to printer able to make printing two-sided booklets easy, you probably want to use this. The other version "core-rules-two-sided-booklet-broadside-print" contains a version where the pages are laid out in a way that one can staple the pages on top of each other to create a "booklet" of the rules. Every second page is mirrored assuming the pages are flipped along the broadside of the paper.
-* "reinforcement-points-purchase-table-printable-pdf"
+* `reinforcement-points-purchase-table-printable-pdf`
   * This contains a copy of the reinforcement shop of the game. It's intended to be folded three times to an "accordion" shape after cutting along the crop marks.
 * The misery, secondary and secret objective cards from `misery-card-collection.pdf`, `secondary-card-collection.pdf` and `secret-card-collection.pdf`. Printing a set and cutting along the crop marks will give you roughly 120x70mm size sheets.
 * You can also print the necessary spawn tables from the `spawn-tables` directory depending on what Hordes the players intend to use. These are intended to be cut and folded similarly to the reinforcement points purchase table above.
