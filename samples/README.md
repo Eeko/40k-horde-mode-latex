@@ -1,1 +1,0 @@
-Contains some manually created samples of .tex files and their respective .pdf outputs to work as a target quality we aim our generators to be able to generate.
